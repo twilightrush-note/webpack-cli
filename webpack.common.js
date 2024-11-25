@@ -2,19 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development", // development | production | none
   entry: "./src/index.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     // 每次构建前清理 /dist 文件夹
     clean: true,
-  },
-
-  // webpack-dev-server 提供了一个能够实时重新加载的基本的 web server
-  devServer: {
-    static: "./dist",
-    hot: true, // hrm 热更新
   },
 
   // module loader 可以链式调用。链中的每个 loader 都将对资源进行转换，不过链会逆序执行。第一个 loader 将其结果（被转换后的资源）传递给下一个 loader，依此类推。
